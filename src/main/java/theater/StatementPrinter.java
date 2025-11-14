@@ -9,8 +9,8 @@ import java.util.Map;
  * This class generates a statement for a given invoice of performances.
  */
 public class StatementPrinter {
+    private static Map<String, Play> plays;
     private Invoice invoice;
-    private Map<String, Play> plays;
 
     public StatementPrinter(Invoice invoice, Map<String, Play> plays) {
         this.invoice = invoice;
@@ -33,7 +33,7 @@ public class StatementPrinter {
 
         for (Performance p : invoice.getPerformances()) {
 
-            final int amount = getAmount(p, getPlay(p));
+            final int amount = getAmount(p);
 
             // add volume credits
             volumeCredits += Math.max(p.getAudience() - Constants.BASE_VOLUME_CREDIT_THRESHOLD, 0);
@@ -53,13 +53,13 @@ public class StatementPrinter {
         return result.toString();
     }
 
-    private Play getPlay(Performance performance) {
+    private static Play getPlay(Performance performance) {
         return plays.get(performance.getPlayID());
     }
 
-    private static int getAmount(Performance performance, Play play) {
+    private static int getAmount(Performance performance) {
         int thisAmount = 0;
-        switch (play.getType()) {
+        switch (getPlay(performance).getType()) {
             case "tragedy":
                 thisAmount = Constants.TRAGEDY_BASE_AMOUNT;
                 if (performance.getAudience() > Constants.TRAGEDY_AUDIENCE_THRESHOLD) {
@@ -77,7 +77,7 @@ public class StatementPrinter {
                 thisAmount += Constants.COMEDY_AMOUNT_PER_AUDIENCE * performance.getAudience();
                 break;
             default:
-                throw new RuntimeException(String.format("unknown type: %s", play.getType()));
+                throw new RuntimeException(String.format("unknown type: %s", getPlay(performance).getType()));
         }
         return thisAmount;
     }
