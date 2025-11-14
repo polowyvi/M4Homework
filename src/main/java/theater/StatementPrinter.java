@@ -32,26 +32,29 @@ public class StatementPrinter {
         final NumberFormat frmt = NumberFormat.getCurrencyInstance(Locale.US);
 
         for (Performance p : invoice.getPerformances()) {
-            final Play play = plays.get(p.getPlayID());
 
-            final int amount = getAmount(p, play);
+            final int amount = getAmount(p, getPlay(p));
 
             // add volume credits
             volumeCredits += Math.max(p.getAudience() - Constants.BASE_VOLUME_CREDIT_THRESHOLD, 0);
             // add extra credit for every five comedy attendees
-            if ("comedy".equals(play.getType())) {
+            if ("comedy".equals(getPlay(p).getType())) {
                 volumeCredits += p.getAudience() / Constants.COMEDY_EXTRA_VOLUME_FACTOR;
 
                 // print line for this order
 
             }
-            result.append(String.format("  %s: %s (%s seats)%n", play.getName(),
+            result.append(String.format("  %s: %s (%s seats)%n", getPlay(p).getName(),
                     frmt.format(amount / Constants.PERCENT_FACTOR), p.getAudience()));
             totalAmount += amount;
         }
         result.append(String.format("Amount owed is %s%n", frmt.format(totalAmount / Constants.PERCENT_FACTOR)));
         result.append(String.format("You earned %s credits%n", volumeCredits));
         return result.toString();
+    }
+
+    private Play getPlay(Performance performance) {
+        return plays.get(performance.getPlayID());
     }
 
     private static int getAmount(Performance performance, Play play) {
