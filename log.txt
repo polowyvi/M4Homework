@@ -9,4 +9,5 @@ b82a1f4 Task 2.1 - Inline Variable thisamount
 1d0fcf0 Task 2.1 - Removing parameter Play for getAmount!
 ada078b Task 2.1 - Create getPlay and refactored inline variable
 e8aeb17 Task 2.1 - Rename Local Variable
-:
+3502977 Task 1.2
+8ba2f57 Task 1.1
