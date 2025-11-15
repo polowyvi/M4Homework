@@ -8,7 +8,7 @@ public final class Constants {
     // volume constants
     public static final int BASE_VOLUME_CREDIT_THRESHOLD = 30;
     public static final int COMEDY_EXTRA_VOLUME_FACTOR = 5;
-    // comedy amount constants
+    // comedy amount constant
     public static final int COMEDY_AMOUNT_PER_AUDIENCE = 300;
     public static final int COMEDY_AUDIENCE_THRESHOLD = 20;
     public static final int COMEDY_BASE_AMOUNT = 30000;

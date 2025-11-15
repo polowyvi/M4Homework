@@ -1,4 +1,6 @@
-7d8f277 (HEAD -> main, origin/main, origin/HEAD) Task 2.4 - Extracted getTotalVolumeCredits and getTotalAmount.
+b289514 (HEAD -> main, origin/main, origin/HEAD) Task 1.1 - Fixed static variable
+3e272d5 Task 2.4 - log update
+7d8f277 Task 2.4 - Extracted getTotalVolumeCredits and getTotalAmount.
 352ee15 Task 2.3 - log update
 d2daee9 Task 2.3 - frmt and usd helper method created
 1534ba7 Task 2.2 - Volume Credits helper  + log update
@@ -7,5 +9,4 @@ b82a1f4 Task 2.1 - Inline Variable thisamount
 1d0fcf0 Task 2.1 - Removing parameter Play for getAmount!
 ada078b Task 2.1 - Create getPlay and refactored inline variable
 e8aeb17 Task 2.1 - Rename Local Variable
-147d75e Task 2.1 - Extract method getAmount
-3502977 Task 1.2
+:
