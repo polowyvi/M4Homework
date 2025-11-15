@@ -1,4 +1,6 @@
-d2daee9 (HEAD -> main, origin/main, origin/HEAD) Task 2.3 - frmt and usd helper method created
+7d8f277 (HEAD -> main, origin/main, origin/HEAD) Task 2.4 - Extracted getTotalVolumeCredits and getTotalAmount.
+352ee15 Task 2.3 - log update
+d2daee9 Task 2.3 - frmt and usd helper method created
 1534ba7 Task 2.2 - Volume Credits helper  + log update
 4c43ac4 Task 2.2 - Volume Credits helper created
 b82a1f4 Task 2.1 - Inline Variable thisamount
@@ -7,5 +9,3 @@ ada078b Task 2.1 - Create getPlay and refactored inline variable
 e8aeb17 Task 2.1 - Rename Local Variable
 147d75e Task 2.1 - Extract method getAmount
 3502977 Task 1.2
-8ba2f57 Task 1.1
-f074c51 Initial commit
